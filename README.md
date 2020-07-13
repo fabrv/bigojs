@@ -28,7 +28,7 @@ bigo run
 ```
 The project created is a Typescript Express aplication, so there are multiple ways of running the application.
 
-## Generate
+### Generate
 ```bash
 bigo generate myComponent
 ```
@@ -39,3 +39,6 @@ This will create the following files:
 |  |- myComponent.ts
 |  |- myComponent.html
 ```
+
+## Credits
+* *Author*: Fabrizzio Rivera - [fabrv](https://github.com/fabrv)

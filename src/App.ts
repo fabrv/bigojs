@@ -1,5 +1,6 @@
 import minimist from 'minimist'
 import { version } from './conf.json'
+import { generate } from './cmds/generate'
 
 export class Amigo {
   args: minimist.ParsedArgs = minimist(process.argv.slice(2))
@@ -15,6 +16,9 @@ export class Amigo {
     }
 
     switch (cmd) {
+      case 'generate':
+        generate(this.args._[1])
+        break
       case 'version':
         console.log(`v${version}`)
         break

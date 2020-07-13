@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Amigo = void 0;
 const minimist_1 = __importDefault(require("minimist"));
 const conf_json_1 = require("./conf.json");
+const generate_1 = require("./cmds/generate");
 class Amigo {
     constructor() {
         this.args = minimist_1.default(process.argv.slice(2));
@@ -17,6 +18,9 @@ class Amigo {
             cmd = 'help';
         }
         switch (cmd) {
+            case 'generate':
+                generate_1.generate(this.args._[1]);
+                break;
             case 'version':
                 console.log(`v${conf_json_1.version}`);
                 break;

@@ -1,11 +1,13 @@
 {
   "name": "bigo",
   "version": "0.1.0",
-  "description": "Mustache based serverside render framework",
+  "description": "Mustache based serverside render boilerplater",
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build:live",
-    "build": "tsc && npm link",
+    "copy": "copyfiles --up 1 src/**/*.mustache dist/",
+    "build": "npm run copy && tsc",
+    "build:link": "npm build && npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -37,6 +39,7 @@
   "devDependencies": {
     "@types/minimist": "^1.2.0",
     "@types/mustache": "^4.0.1",
-    "@types/node": "^14.0.22"
+    "@types/node": "^14.0.22",
+    "copyfiles": "^2.3.0"
   }
 }
