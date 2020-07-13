@@ -1,0 +1,18 @@
+import { Component } from bigo;
+import fs from 'fs'
+import path from 'path'
+
+interface {{componentName}}Interface {
+  
+}
+
+const template = fs.readFileSync(path.resolve(__dirname, '{{componentName}}.html'), 'utf8')
+
+/**
+ * Class that represents an {{componentName}} component
+ */
+export class {{componentName}}Component extends Component<{{componentName}}Interface> {
+  constructor(viewData: {{componentName}}Interface) {
+    super(viewData, template)
+  }
+}
