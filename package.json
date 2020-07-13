@@ -1,10 +1,15 @@
 {
   "name": "bigo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Mustache based serverside render framework",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc && npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "amigo": "bin/bigo"
   },
   "repository": {
     "type": "git",
@@ -16,15 +21,22 @@
     "serverside",
     "node",
     "javascript",
-    "nodejs"
+    "nodejs",
+    "boilerplater"
   ],
-  "author": "Fabrizzio Rivera",
+  "author": "Fabrizio Delcompare",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fabrv/bigo/issues"
   },
   "homepage": "https://github.com/fabrv/bigo#readme",
   "dependencies": {
+    "minimist": "^1.2.5",
     "mustache": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.0",
+    "@types/mustache": "^4.0.1",
+    "@types/node": "^14.0.22"
   }
 }

@@ -5,14 +5,15 @@
       "target": "es6",
       "noImplicitAny": true,
       "moduleResolution": "node",
-      "sourceMap": true,
+      "resolveJsonModule": true,
+      "sourceMap": false,
       "outDir": "dist",
-      "baseUrl": ".",
+      "baseUrl": "src",
       "paths": {
           "*": [
               "node_modules/*",
               "src/types/*"
-          ]
+          ]          
       }
   },
   "include": [
