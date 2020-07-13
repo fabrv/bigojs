@@ -41,4 +41,4 @@ This will create the following files:
 ```
 
 ## Credits
-* *Author*: Fabrizzio Rivera - [fabrv](https://github.com/fabrv)
+* *Author*: Fabrizio Delcompare - [fabrv](https://github.com/fabrv)
