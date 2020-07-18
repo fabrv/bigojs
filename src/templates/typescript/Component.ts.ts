@@ -1,4 +1,4 @@
-import { Component } from '../../RenderEngine/Component';
+import { Component } from '../../';
 import fs from 'fs'
 import path from 'path'
 

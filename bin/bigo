@@ -1,2 +1,5 @@
 #!/usr/bin/env node
-require('../dist')
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const App_1 = require("../dist/App");
+let app = new App_1.Bigo();
