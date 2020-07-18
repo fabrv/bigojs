@@ -1,5 +1,6 @@
 import { CmpTsComponent } from '../templates/typescript/Component.ts'
 import { CmpHtmlComponent } from '../templates/html/Component.html'
+import fs from 'fs'
 /**
  * Generate a new empty component
  * @param componentName {string} The component class and file name
@@ -9,6 +10,9 @@ export function generate(componentName: string): void {
 
   const compTs = new CmpTsComponent({componentName: componentName})
   const compHtml = new CmpHtmlComponent({componentName: componentName})
-  console.log(compTs.render())
-  console.log('\n----\n', compHtml.render())
+
+  const path = `${process.cwd()}\\${componentName}`
+  fs.mkdirSync(path, {recursive: true})
+  fs.writeFileSync(`${path}\\${componentName}.ts`, compTs.render(), 'utf8')
+  fs.writeFileSync(`${path}\\${componentName}.html`, compHtml.render(), 'utf8')
 }

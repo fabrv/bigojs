@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import {Amigo} from './App'
 
-const app = new Amigo()
+import { Bigo } from './App'
+let app = new Bigo()

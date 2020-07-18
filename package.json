@@ -1,6 +1,6 @@
 {
-  "name": "bigo",
-  "version": "0.1.0",
+  "name": "bigojs",
+  "version": "0.1.5",
   "description": "Mustache based serverside render boilerplater",
   "main": "dist/index.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "build:link": "npm build && npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "types": "./types.d.ts",
   "bin": {
-    "amigo": "bin/bigo"
+    "bigo": "bin/bigo"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
     "@types/minimist": "^1.2.0",
     "@types/mustache": "^4.0.1",
     "@types/node": "^14.0.22",
-    "copyfiles": "^2.3.0"
+    "copyfiles": "^2.3.0",
+    "jsdoc": "^3.6.4",
+    "tsd-jsdoc": "^2.5.0"
   }
 }

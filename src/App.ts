@@ -2,7 +2,7 @@ import minimist from 'minimist'
 import { version } from './conf.json'
 import { generate } from './cmds/generate'
 
-export class Amigo {
+export class Bigo {
   args: minimist.ParsedArgs = minimist(process.argv.slice(2))
   constructor() {
     let cmd = this.args._[0] || 'help'

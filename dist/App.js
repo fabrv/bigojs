@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Amigo = void 0;
+exports.Bigo = void 0;
 const minimist_1 = __importDefault(require("minimist"));
 const conf_json_1 = require("./conf.json");
 const generate_1 = require("./cmds/generate");
-class Amigo {
+class Bigo {
     constructor() {
         this.args = minimist_1.default(process.argv.slice(2));
         let cmd = this.args._[0] || 'help';
@@ -40,4 +40,4 @@ class Amigo {
         process.exit();
     }
 }
-exports.Amigo = Amigo;
+exports.Bigo = Bigo;
