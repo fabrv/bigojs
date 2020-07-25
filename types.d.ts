@@ -1,3 +1,5 @@
+import { IncomingMessage } from "http";
+
 declare module "bigojs" {
   /**
    * Class that represents a <View, Template> Component
@@ -15,4 +17,21 @@ declare module "bigojs" {
      */
     render(): string
   }
+}
+
+/**
+ * Class representing http request. For parsing and reorganazing NodeJS's http.IncommingMessage
+ */
+export class Request {
+  params: string
+  url: string
+  route: string[]
+  body: string
+  method: string
+
+  /**
+   * Create a new Bigo Request
+   * @param {IncomingMessage} request - HttpServer incomming message
+   */
+  constructor(request: IncomingMessage)
 }
