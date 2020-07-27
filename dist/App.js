@@ -7,6 +7,7 @@ exports.Bigo = void 0;
 const minimist_1 = __importDefault(require("minimist"));
 const conf_json_1 = require("./conf.json");
 const generate_1 = require("./cmds/generate");
+const start_1 = require("./cmds/start");
 class Bigo {
     constructor() {
         this.args = minimist_1.default(process.argv.slice(2));
@@ -20,6 +21,9 @@ class Bigo {
         switch (cmd) {
             case 'generate':
                 generate_1.generate(this.args._[1]);
+                break;
+            case 'start':
+                start_1.start(this.args._[1], this.args.type);
                 break;
             case 'version':
                 console.log(`v${conf_json_1.version}`);
@@ -37,7 +41,7 @@ class Bigo {
         `);
                 break;
         }
-        process.exit();
+        //process.exit()
     }
 }
 exports.Bigo = Bigo;

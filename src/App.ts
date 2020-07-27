@@ -1,6 +1,7 @@
 import minimist from 'minimist'
 import { version } from './conf.json'
 import { generate } from './cmds/generate'
+import { start } from './cmds/start'
 
 export class Bigo {
   args: minimist.ParsedArgs = minimist(process.argv.slice(2))
@@ -14,10 +15,13 @@ export class Bigo {
     if (this.args.help || this.args.h) {
       cmd = 'help'
     }
-
+    
     switch (cmd) {
       case 'generate':
         generate(this.args._[1])
+        break
+      case 'start':
+        start(this.args._[1], this.args.type)
         break
       case 'version':
         console.log(`v${version}`)
@@ -35,6 +39,6 @@ export class Bigo {
         `)
         break
     }
-    process.exit()
+    //process.exit()
   }
 }
