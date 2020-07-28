@@ -8,7 +8,7 @@ const child_process_1 = require("child_process");
 const fs_1 = __importDefault(require("fs"));
 const repos = {
     'blog': 'https://github.com/fabrv/bigojs-blog-template.git',
-    'blank': ''
+    'blank': 'https://github.com/fabrv/bigojs-blank-template'
 };
 function start(projectName, type = 'blank') {
     const repoLink = repos[type];
