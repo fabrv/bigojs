@@ -41,6 +41,19 @@ export function start(projectName: string, type: string = 'blank'): void {
           return
         }
         console.log(`${stdout}`)
+
+        console.log('Installing dependencies')
+        exec(`cd ${projectName} && npm i`, (error, stdout, stderr) => {
+          if (error) {
+            console.log(`error: ${error.message}`)
+            return
+          }
+          if (stderr) {
+            console.log(`stderr: ${stderr}`)
+            return
+          }
+          console.log(`${stdout}`)
+        })
       })
     })
   })

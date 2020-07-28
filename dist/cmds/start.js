@@ -43,6 +43,18 @@ function start(projectName, type = 'blank') {
                     return;
                 }
                 console.log(`${stdout}`);
+                console.log('Installing dependencies');
+                child_process_1.exec(`cd ${projectName} && npm i`, (error, stdout, stderr) => {
+                    if (error) {
+                        console.log(`error: ${error.message}`);
+                        return;
+                    }
+                    if (stderr) {
+                        console.log(`stderr: ${stderr}`);
+                        return;
+                    }
+                    console.log(`${stdout}`);
+                });
             });
         });
     });
