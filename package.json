@@ -1,7 +1,7 @@
 {
   "name": "bigojs",
-  "version": "0.1.13",
-  "description": "Mustache based serverside render boilerplater",
+  "version": "1.0.0",
+  "description": "Mustache based serverside rendered boilerplater",
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build:live",
