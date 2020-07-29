@@ -16,7 +16,7 @@ function start(projectName, type = 'blank') {
         console.log('Error: Invalid project type');
         return;
     }
-    console.log(`Cloning ${repoLink} template`);
+    console.log(`Cloning ${type} template`);
     child_process_1.exec(`git clone ${repoLink} ${projectName}`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);

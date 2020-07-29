@@ -1,5 +1,5 @@
 {
     "name": "bigo",
-    "version": "1.0.0",
-    "description": "Mustache based serverside render boilerplater"
+    "version": "1.0.1",
+    "description": "Mustache based serverside rendered boilerplater"
 }
