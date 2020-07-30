@@ -1,5 +1,5 @@
 # Bigo
-Mustache based templates boilerplater and easy generator for server-rendered websites and applications.
+Mustache based boilerplater and easy generator for server-side websites and applications.
 
 ## Dependencies
 - Mustache.js
