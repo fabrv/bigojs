@@ -4,14 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bigo = void 0;
-const minimist_1 = __importDefault(require("minimist"));
-const conf_json_1 = require("./conf.json");
-const generate_1 = require("./cmds/generate");
-const start_1 = require("./cmds/start");
-class Bigo {
-    constructor() {
+var minimist_1 = __importDefault(require("minimist"));
+var conf_json_1 = require("./conf.json");
+var generate_1 = require("./cmds/generate");
+var start_1 = require("./cmds/start");
+var Bigo = /** @class */ (function () {
+    function Bigo() {
         this.args = minimist_1.default(process.argv.slice(2));
-        let cmd = this.args._[0] || 'help';
+        var cmd = this.args._[0] || 'help';
         if (this.args.version || this.args.v) {
             cmd = 'version';
         }
@@ -26,22 +26,16 @@ class Bigo {
                 start_1.start(this.args._[1], this.args.type);
                 break;
             case 'version':
-                console.log(`v${conf_json_1.version}`);
+                console.log("v" + conf_json_1.version);
                 break;
             default:
-                console.error(`"${cmd}" is not a valid command!`);
+                console.error("\"" + cmd + "\" is not a valid command!");
             case 'help':
-                console.log(`
-  bigo [command] <options>
-
-  start .................. Create a new project
-  run .................... Run project
-  generate ............... Generate new componentes
-  help ................... Get help
-        `);
+                console.log("\n  bigo [command] <options>\n\n  start .................. Create a new project\n  run .................... Run project\n  generate ............... Generate new componentes\n  help ................... Get help\n        ");
                 break;
         }
         //process.exit()
     }
-}
+    return Bigo;
+}());
 exports.Bigo = Bigo;

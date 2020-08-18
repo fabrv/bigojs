@@ -4,56 +4,57 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.start = void 0;
-const child_process_1 = require("child_process");
-const fs_1 = __importDefault(require("fs"));
-const repos = {
+var child_process_1 = require("child_process");
+var fs_1 = __importDefault(require("fs"));
+var repos = {
     'blog': 'https://github.com/fabrv/bigojs-blog-template.git',
     'blank': 'https://github.com/fabrv/bigojs-blank-template'
 };
-function start(projectName, type = 'blank') {
-    const repoLink = repos[type];
+function start(projectName, type) {
+    if (type === void 0) { type = 'blank'; }
+    var repoLink = repos[type];
     if (!repoLink) {
         console.log('Error: Invalid project type');
         return;
     }
-    console.log(`Cloning ${type} template`);
-    child_process_1.exec(`git clone ${repoLink} ${projectName}`, (error, stdout, stderr) => {
+    console.log("Cloning " + type + " template");
+    child_process_1.exec("git clone " + repoLink + " " + projectName, function (error, stdout, stderr) {
         if (error) {
-            console.log(`error: ${error.message}`);
+            console.log("error: " + error.message);
             return;
         }
         if (stderr) {
-            console.log(`${stderr}`);
+            console.log("" + stderr);
             //return
         }
-        console.log(`${stdout}`);
-        fs_1.default.rmdir(`${projectName}/.git`, { recursive: true }, error => {
+        console.log("" + stdout);
+        fs_1.default.rmdir(projectName + "/.git", { recursive: true }, function (error) {
             if (error) {
-                console.log(`error: ${error.message}`);
+                console.log("error: " + error.message);
                 return;
             }
             console.log('Initializing git');
-            child_process_1.exec(`cd ${projectName} && git init`, (error, stdout, stderr) => {
+            child_process_1.exec("cd " + projectName + " && git init", function (error, stdout, stderr) {
                 if (error) {
-                    console.log(`error: ${error.message}`);
+                    console.log("error: " + error.message);
                     return;
                 }
                 if (stderr) {
-                    console.log(`stderr: ${stderr}`);
+                    console.log("stderr: " + stderr);
                     return;
                 }
-                console.log(`${stdout}`);
+                console.log("" + stdout);
                 console.log('Installing dependencies');
-                child_process_1.exec(`cd ${projectName} && npm i`, (error, stdout, stderr) => {
+                child_process_1.exec("cd " + projectName + " && npm i", function (error, stdout, stderr) {
                     if (error) {
-                        console.log(`error: ${error.message}`);
+                        console.log("error: " + error.message);
                         return;
                     }
                     if (stderr) {
-                        console.log(`stderr: ${stderr}`);
+                        console.log("stderr: " + stderr);
                         return;
                     }
-                    console.log(`${stdout}`);
+                    console.log("" + stdout);
                 });
             });
         });
