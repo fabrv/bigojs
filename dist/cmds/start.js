@@ -7,8 +7,8 @@ exports.start = void 0;
 var child_process_1 = require("child_process");
 var fs_1 = __importDefault(require("fs"));
 var repos = {
-    'blog': 'https://github.com/fabrv/bigojs-blog-template.git',
-    'blank': 'https://github.com/fabrv/bigojs-blank-template'
+    'blog': 'https://github.com/bigojs/blog-template-ts.git',
+    'blank': 'https://github.com/bigojs/blog-template-ts.git'
 };
 function start(projectName, type) {
     if (type === void 0) { type = 'blank'; }
