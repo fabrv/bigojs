@@ -1,6 +1,6 @@
 {
   "name": "bigojs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mustache based serverside rendered boilerplater",
   "main": "dist/index.js",
   "scripts": {
